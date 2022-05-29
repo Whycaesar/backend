@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nucts",
+  "info": {
+    "singularName": "nuct",
+    "pluralName": "nucts",
+    "displayName": "Nucts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Path": {
+      "type": "string"
+    },
+    "NumberHome": {
+      "type": "integer"
+    },
+    "artists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::artist.artist",
+      "mappedBy": "nucts"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    }
+  }
+}
